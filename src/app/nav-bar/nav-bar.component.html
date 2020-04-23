@@ -1,0 +1,11 @@
+<mat-toolbar  color="primary">
+    <mat-toolbar-row>
+      <span><h3 [style.color]="'yellow'">ADMIN PORTAL</h3></span>
+      <span class="example-spacer"></span>
+      <div class="example-button-row">
+      <span [hidden]="!loggedIn"><a class="example-label" mat-button>View Merch</a></span>
+      <span [hidden]="!loggedIn"><a class="example-label" mat-button>Add Merch</a></span>
+      <span [hidden]="!loggedIn"><a class="example-label" mat-button>Logout</a> </span>
+    </div>
+    </mat-toolbar-row>
+    </mat-toolbar>
