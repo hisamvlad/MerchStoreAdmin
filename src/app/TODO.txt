@@ -1,0 +1,2 @@
+1) make Merch class fields reflect product requirements in Stripe (currently doesn't reflect the full list of 
+attributes and not being tested with real Stripe account)

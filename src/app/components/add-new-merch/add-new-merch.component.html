@@ -1,1 +1,103 @@
-<p>add-new-merch works!</p>
+<div class="container">
+    <div [hidden]="merchAdded">
+        <h3 style="margin-top: 30px;">New Merch Item Information
+            <span style=" font-size:small">* is a required field</span>
+        </h3>
+
+        <form (ngSubmit) = "onSubmit()">
+            
+            <md-grid-list cols="4" rowHeight="60px">
+                <md-grid-title [colspan]="4" [rowspan]="1">
+                    <md-input-container>
+                    <input mdInput id="title" type="text" required [(ngModel)]="newMerch.name" name="name" placeholder="Item Name">
+                    </md-input-container>
+                </md-grid-title>
+            </md-grid-list>
+
+            <md-grid-list cols="4" rowHeight="60px">
+                <md-grid-title [colspan]="2" [rowspan]="1">
+                    <md-input-container>
+                    <input mdInput id="brand" type="text" required [(ngModel)]="newMerch.brand" name="brand" placeholder="Item Brand">
+                    </md-input-container>
+                </md-grid-title>
+                <md-grid-title [colspan]="2" [rowspan]="1">
+                    <md-input-container>
+                    <input mdInput id="manufacturer" type="text" required [(ngModel)]="newMerch.manufacturer" name="manufacturer" placeholder="Item Manufacturer">
+                    </md-input-container>
+                </md-grid-title>
+            </md-grid-list>
+
+            <md-grid-list cols="4" rowHeight="60px">
+                <md-grid-title [colspan]="4" [rowspan]="1">
+                    <md-input-container>
+                    <input mdInput id="shippingWeight" type="number" required [(ngModel)]="newMerch.shippingWeight" name="shippingWeight" placeholder="Item Shipping Weight">
+                    </md-input-container>
+                </md-grid-title>
+            </md-grid-list>
+
+            <md-grid-list cols="4" rowHeight="60px">
+                <md-grid-tile [colspan]="2" [rowspan]="1">
+                    <md-select placeholder="Category" id="category" name="category" [(ngModel)]="newMerch.category">
+                        <md-option value="Rags">Rags(Clothing)</md-option>
+                        <md-option value="Gear">Gear(Gadgets)</md-option>
+                        <md-option value="Wankers">Wankers(De-stressers)</md-option>
+                        <md-option value="Swag">Swag(Accessories)</md-option>
+                        <md-option value="CodersDen">Knick-knackery(Items for Coder's Den)</md-option>
+                    </md-select>
+                </md-grid-tile>
+                <md-grid-tile [colspan]="2" [rowspan]="1">
+                    <md-select placeholder="Colour" id="colour" name="colour" [(ngModel)]="newMerch.colour">
+                        <md-option value="This">This</md-option>
+                        <md-option value="That">That</md-option>
+                    </md-select>
+                </md-grid-tile>
+            </md-grid-list>
+
+            <md-grid-list cols="4" rowHeight="60px">
+                <md-grid-tile [colspan]="2" [rowspan]="1">
+                    $&nbsp;
+                    <md-input-container>
+                        <input mdInput id="listPrice" type="number" name="listPrice" class="validate" step="0.01" [(ngModel)]="newMerch.listPrice" placeholder="List Price">
+                    </md-input-container>
+                </md-grid-tile>
+                <md-grid-tile [colspan]="2" [rowspan]="1">
+                    $&nbsp;
+                    <md-input-container>
+                        <input mdInput id="discountedPrice" type="number" name="discountedPrice" class="validate" step="0.01" [(ngModel)]="newMerch.discountedPrice" placeholder="Discounted Price">
+                    </md-input-container>
+                </md-grid-tile>
+            </md-grid-list>
+
+            <md-grid-list cols="4" rowHeight="60px">
+                <md-grid-tile [colspan]="2" [rowspan]="1">
+                    <md-input-container>
+                        <input mdInput id="inStockNumber" type="number" name="inStockNumber" class="validate" step="0.01" [(ngModel)]="newMerch.inStockNumber" placeholder="Numbers In Stock">
+                    </md-input-container>
+                </md-grid-tile>
+                <md-grid-tile [colspan]="2" [rowspan]="1">
+                    &nbsp;
+                    <md-slide-toggle [color]="color" [checked]="checked" [disabled]="disabled" [(ngModel)]="newMerch.active" name="active">
+                        Active
+                    </md-slide-toggle>
+                </md-grid-tile>
+            </md-grid-list>
+            <md-input-container>
+                <textarea mdInput id="title" [(ngModel)]="newMerch.description" name="description" placeholder="Description" required></textarea>
+            </md-input-container>
+            Image &nbsp;
+            <input id="title" type="file" id="merchImage" name="merchImage" (change)="uploadImageService.fileChangeEvent($event)">
+            <br><br>
+            <md-grid-list cols="20" rowHeight="60px">
+                <md-grid-tile [colspan]="2" [rowspan]="1">
+                    <button class="mat-primary" md-raised-button type="submit">Add Merch</button>
+                </md-grid-tile>
+                <md-grid-tile [colspan]="2" [rowspan]="1">
+                    <a class="mat-warn" md-raised-button routerLink="/">Cancel</a>
+                </md-grid-tile>
+            </md-grid-list>
+        </form>
+    </div>
+    <div class="row" [hidden]="!merchAdded">
+        <h3>Merch added successfully!</h3>
+</div>
+</div>
