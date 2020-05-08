@@ -7,32 +7,32 @@
         <form (ngSubmit) = "onSubmit()">
             
             <md-grid-list cols="4" rowHeight="60px">
-                <md-grid-title [colspan]="4" [rowspan]="1">
+                <md-grid-tile [colspan]="4" [rowspan]="1">
                     <md-input-container>
-                    <input mdInput id="title" type="text" required [(ngModel)]="newMerch.name" name="name" placeholder="Item Name">
+                    <input mdInput id="tile" type="text" required [(ngModel)]="newMerch.name" name="name" placeholder="Item Name">
                     </md-input-container>
-                </md-grid-title>
+                </md-grid-tile>
             </md-grid-list>
 
             <md-grid-list cols="4" rowHeight="60px">
-                <md-grid-title [colspan]="2" [rowspan]="1">
+                <md-grid-tile [colspan]="2" [rowspan]="1">
                     <md-input-container>
                     <input mdInput id="brand" type="text" required [(ngModel)]="newMerch.brand" name="brand" placeholder="Item Brand">
                     </md-input-container>
-                </md-grid-title>
-                <md-grid-title [colspan]="2" [rowspan]="1">
+                </md-grid-tile>
+                <md-grid-tile [colspan]="2" [rowspan]="1">
                     <md-input-container>
                     <input mdInput id="manufacturer" type="text" required [(ngModel)]="newMerch.manufacturer" name="manufacturer" placeholder="Item Manufacturer">
                     </md-input-container>
-                </md-grid-title>
+                </md-grid-tile>
             </md-grid-list>
 
             <md-grid-list cols="4" rowHeight="60px">
-                <md-grid-title [colspan]="4" [rowspan]="1">
+                <md-grid-tile [colspan]="4" [rowspan]="1">
                     <md-input-container>
                     <input mdInput id="shippingWeight" type="number" required [(ngModel)]="newMerch.shippingWeight" name="shippingWeight" placeholder="Item Shipping Weight">
                     </md-input-container>
-                </md-grid-title>
+                </md-grid-tile>
             </md-grid-list>
 
             <md-grid-list cols="4" rowHeight="60px">

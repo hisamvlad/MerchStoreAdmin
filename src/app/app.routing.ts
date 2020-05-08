@@ -8,6 +8,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { AddNewMerchComponent } from './components/add-new-merch/add-new-merch.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,9 @@ const routes: Routes = [
     { path: 'user', component: BoardUserComponent },
     { path: 'mod', component: BoardModeratorComponent },
     { path: 'admin', component: BoardAdminComponent },
-    { path: '', redirectTo: 'home', pathMatch: 'full' }
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+
+    { path: 'addNewMerch', component: AddNewMerchComponent }
   ];
 
   @NgModule({
